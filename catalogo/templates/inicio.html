@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+	HOLA SOY MI PRIMERA PAGINA
+
+	<br>
+	<br>
+
+	<a href="{% url 'productos:listar_productos' %}">IR A PRODUCTOS</a>
+
+{% endblock contenido %}
