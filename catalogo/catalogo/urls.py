@@ -15,13 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth
+
+
 from . import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', views.Inicio, name = 'inicio'),
+    
+    path('login/', auth.LoginView.as_view(template_name="usuarios/login.html"), name='login'),
+    path('logout/', auth.LogoutView.as_view(), name='logout'),
+
 
     #PATH QUE APUNTAN A APPS
-
-    path('productos/', include('apps.productos.urls'))
+    path('productos/', include('apps.productos.urls')),
 ]

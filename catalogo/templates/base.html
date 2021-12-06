@@ -13,7 +13,22 @@
 	<img src="{% static 'img/logo.png' %}" class="image-menu">
 
 
-	<div class="menu"> ACA VA A IR EL MENU </div>
+	<div class="menu"> 
+
+		<p>ACA VA A IR EL MENU</p>
+		<br>
+
+		{% if user.is_authenticated %}
+			<span>WELCOME {{ user.username }}</span>
+			<a href="{% url 'logout' %}">CERRAR SESION </a>
+		{% else %}
+			<a href="{% url 'login' %}">LOGIN</a>
+			<a href="">REGISTRO</a>
+
+		{% endif %}
+
+
+	</div>
 
 
 	{% block contenido %}
