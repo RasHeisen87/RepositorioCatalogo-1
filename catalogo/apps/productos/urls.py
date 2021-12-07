@@ -6,6 +6,9 @@ app_name = 'productos'
 
 urlpatterns = [
  	
-	path('listar/', views.ListarProductos, name = 'listar_productos')
+	path('listar/', views.ListarProductos, name = 'listar_productos'),
 
+	path('detalle/<int:pk>', views.DetalleProducto, name= 'detalle'),
+
+	path('FILTRO/<int:pk>', views.FiltroXRubro, name= 'filtro'),
 ]

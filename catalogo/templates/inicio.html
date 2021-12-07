@@ -9,6 +9,15 @@
 	<br>
 	<br>
 
-	<a href="{% url 'productos:listar_productos' %}">IR A PRODUCTOS</a>
+	<a href="{% url 'productos:listar_productos' %}">IR A PRODUCTOS</a><br>
+
+	{% for r in rubros%}
+
+	<a href="{% url 'productos:filtro' r.pk %}">
+		VER DEL RUBRO {{r.nombre}}
+
+	</a><br>
+	
+	{% endfor %}
 
 {% endblock contenido %}

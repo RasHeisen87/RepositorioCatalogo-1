@@ -16,6 +16,7 @@ class Producto(models.Model):
 	precio = models.DecimalField(max_digits=5, decimal_places=2)
 	stock = models.IntegerField()
 	rubro = models.ForeignKey(Rubro, on_delete = models.CASCADE )
+	imagen = models.ImageField(upload_to = 'imagenes_productos', null = True)
 
 	def __str__(self):
 		return self.nombre

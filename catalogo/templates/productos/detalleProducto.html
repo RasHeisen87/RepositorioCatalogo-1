@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+
+	<p class="texto-cont">{{ product.nombre }}</p>
+	<br>
+
+	<img src="{{ product.imagen.url }}" width="300px" height="200">
+	<br>
+	<b>{{product.nombre}}</b><br>
+	<span>PRECIO : {{product.precio}}</span><br>
+	<span>STOCK: {{product.stock}}</span><br>
+
+
+
+	<a href="{% url 'inicio' %}">IR AL INICIO</a>
+
+
+{% endblock contenido %}
