@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 from .models import Producto, Rubro
-
+from .forms import  Formulario_alta_producto
 
 
 def ListarProductos(request):
@@ -45,6 +47,13 @@ def FiltroXRubro(request, pk):
 	ctx['rubro'] = rubro
 
 	return render(request, 'productos/filtroxRubro.html',ctx)
+
+
+class AltaProducto(CreateView):
+	model = 'Producto'
+	template_name = 'productos/alta.html'
+	form_class = Formulario_alta_producto
+	success_url = reverse_lazy('productos:listar_productos')
 
 
 

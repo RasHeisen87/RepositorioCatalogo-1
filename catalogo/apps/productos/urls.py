@@ -11,4 +11,7 @@ urlpatterns = [
 	path('detalle/<int:pk>', views.DetalleProducto, name= 'detalle'),
 
 	path('FILTRO/<int:pk>', views.FiltroXRubro, name= 'filtro'),
+
+	path('Alta/', views.AltaProducto.as_view(), name="alta_producto"),
+	
 ]
